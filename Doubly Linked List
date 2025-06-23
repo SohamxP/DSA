@@ -1,0 +1,203 @@
+public class DoublyLinkedList 
+{
+
+    // Node class representing a single element in the list
+    private static class Node 
+    {
+        int data;
+        Node next;
+        Node prev;
+
+        // Constructor to create a new node
+        Node(int data) 
+        {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
+    // Head and tail references for the list
+    private Node head = null;
+    private Node tail = null;
+
+    // Add a node at the front of the list
+    public void addFront(int data) 
+    {
+        Node newNode = new Node(data);
+        if (head == null) // Empty list
+        { 
+            head = newNode;
+            tail = newNode;
+        } 
+        else 
+        {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+        System.out.println("After addFront(" + data + "):");
+        printList();
+    }
+
+    // Add a node at the end of the list
+    public void addEnd(int data) 
+    {
+        Node newNode = new Node(data);
+        if (tail == null) // Empty List
+        { 
+            head = newNode;
+            tail = newNode;
+        } 
+        else 
+        {
+            newNode.prev = tail;
+            tail.next = newNode;
+            tail = newNode;
+        }
+        System.out.println("After addEnd(" + data + "):");
+        printList();
+    }
+
+    // Add a node after a given node
+    public void addAfter(Node prevNode, int data) 
+    {
+        if (prevNode == null)
+            return;
+
+        Node newNode = new Node(data);
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
+        newNode.prev = prevNode;
+
+        if (newNode.next != null) 
+        {
+            newNode.next.prev = newNode;
+        } 
+        else 
+        {
+            tail = newNode;
+        }
+        System.out.println("After addAfter(" + prevNode.data + ", " + data + "):");
+        printList();
+    }
+
+    // Traverse and print the list from front to end
+    public void traverseForward() 
+    {
+        Node current = head;
+        System.out.print("Forward: ");
+        while (current != null) 
+        {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
+    // Traverse and print the list from end to front
+    public void traverseBackward() 
+    {
+        Node current = tail;
+        System.out.print("Backward: ");
+        while (current != null) 
+        {
+            System.out.print(current.data + " ");
+            current = current.prev;
+        }
+        System.out.println();
+    }
+
+    // Helper to print both directions
+    public void printList() 
+    {
+        traverseForward();
+        traverseBackward();
+        System.out.println("------------");
+    }
+
+    // Remove the front node
+    public void removeFront() 
+    {
+        if (head == null)
+            return;
+
+        head = head.next;
+        if (head != null) 
+        {
+            head.prev = null;
+        } 
+        else 
+        {
+            tail = null; // List is now empty
+        }
+        System.out.println("After removeFront():");
+        printList();
+    }
+
+    // Remove the last node
+    public void removeEnd() 
+    {
+        if (tail == null)
+            return;
+
+        tail = tail.prev;
+        if (tail != null) 
+        {
+            tail.next = null;
+        } 
+        else 
+        {
+            head = null; // List is now empty
+        }
+        System.out.println("After removeEnd():");
+        printList();
+    }
+
+    // Remove a specific node
+    public void removeNode(Node node) 
+    {
+        if (node == null)
+            return;
+
+        if (node == head) 
+        {
+            removeFront();
+        } 
+        else if (node == tail) 
+        {
+            removeEnd();
+        } 
+        else 
+        {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            System.out.println("After removeNode(" + node.data + "):");
+            printList();
+        }
+    }
+
+    // Main method to test the class
+    public static void main(String[] args)   
+    {
+        DoublyLinkedList dll = new DoublyLinkedList();
+
+        dll.addFront(10);
+        dll.addFront(20);
+        dll.addEnd(5);
+
+        dll.removeFront();
+        dll.removeEnd();
+
+        dll.addEnd(15);
+        dll.addEnd(25);
+        dll.addAfter(dll.head, 12); // Adding after head (10)
+
+        // Optional: remove a specific node (e.g., node with value 15)
+        DoublyLinkedList.Node current = dll.head;
+        while (current != null && current.data != 15) {
+            current = current.next;
+        }
+        dll.removeNode(current);
+    }
+}
