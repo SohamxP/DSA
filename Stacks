@@ -1,0 +1,19 @@
+import java.util.Stack;
+
+public class BrowserHistoryManager {
+    public static void main(String[] args) {
+        Stack<String> history = new Stack<>();
+        // TODO 1: add 3 websites to the history
+        history.push("google.com");
+        history.push("facebook.com");
+        history.push("youtube.com");
+        // Display history after adding websites
+        System.out.println("History after adding websites: " + history);
+        // TODO 2: peek the last visited website
+        System.out.println("Last visited website: " + history.peek());
+        // TODO 3: go back to the previous website by popping
+        System.out.println("Went back from: " + history.pop());
+        // Display history after going back
+        System.out.println("History after going back: " + history);
+    }
+}
