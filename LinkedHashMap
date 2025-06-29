@@ -50,26 +50,20 @@ public class LibrarySystem {
     public static void main(String[] args) {
         LibrarySystem library = new LibrarySystem();
 
-        // Borrowing books
+        
         library.borrowBook("Alice", "Java Programming");
         library.borrowBook("Bob", "Data Structures");
 
-        // Display all borrowed books
         library.displayAllBorrowedBooks();
-
-        // Check if Charlie has borrowed a book
+        
         library.checkBorrowedBook("Charlie");
 
-        // Borrow a book only if it's not already borrowed
         library.borrowBookIfNotBorrowed("Java Programming", "Charlie");
 
-        // Borrow another book
         library.borrowBookIfNotBorrowed("Operating Systems", "Charlie");
 
-        // Return a book
         library.returnBook("Alice");
 
-        // Display all borrowed books after return
         library.displayAllBorrowedBooks();
     }
 }
