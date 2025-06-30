@@ -47,6 +47,7 @@ Special Functions:
 ```
 ## TreeMap: 
 Maintains the natural order
+HashMap is faster than a TreeMap as TreeMaps have linked entries
 Automatically sorts key-value pairs
 Logarithmic Time Complexity --- O(log n)
 ```
@@ -57,8 +58,9 @@ Functions:
 1. .put(key, value); 
 2. .remove(key, value);
 3. .get(key); //gives null if not present
-4. firstKey();
-5. lastKey();
-6. higherKey();
-7. lowerKey();
+4. .firstKey(); 
+5. .lastKey();
+6. .higherKey(key); //Returns the next higher key 
+7. .lowerKey(key); //Returns the next lower key
+The higherKey and lowerKey do not necessarily require a key present in the TreeMap
 ```
