@@ -1,6 +1,6 @@
 import java.util.TreeMap;
 
-public class Main {
+public class BookManagement {
     private TreeMap<String, String> books = new TreeMap<>();
 
     public void addOrUpdateBook(String isbn, String title) {
@@ -31,7 +31,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main inventory = new Main();
+        BookManagement inventory = new BookManagement();
 
         // Add or update books
         inventory.addOrUpdateBook("978-0134685991", "Effective Java");
