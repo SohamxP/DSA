@@ -19,4 +19,6 @@ Special Functions:
   6. .entrySet()
   7. .putIfAbsent(key, value) [Adds the pair if not present earlier]
 ```
-## TreeMap: Maintains the natural order 
+## TreeMap: 
+Maintains the natural order 
+Automatically sorts key-value pairs
