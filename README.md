@@ -67,7 +67,24 @@ The higherKey and lowerKey do not necessarily require a key present in the TreeM
 
 ## Linear Search
 The compiler walks through the dataset through iterating over a loop and checks if any value matches our target value.  
-Time Complexity: O(n)O(n)O(n) [n, n, n is the number of elements]  
+Time Complexity: O(n) [n is the number of elements]  
 Drawbacks: Inefficient with large lists, Not suitable for sorted data
 
 ## Binary Search
+Time Complexity : O(log n) [Order of log n]
+```
+int left = 0;
+int right = array.length - 1;
+
+while (left <= right)
+{
+  int mid = left + (right - left) / 2;
+  if (array[mid] == target)
+    return mid; // Target found, return index
+  if (array[mid] > target)
+    right = mid - 1;
+  else
+    left = mid + 1;
+}
+
+```
