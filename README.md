@@ -69,3 +69,5 @@ The higherKey and lowerKey do not necessarily require a key present in the TreeM
 The compiler walks through the dataset through iterating over a loop and checks if any value matches our target value.  
 Time Complexity: O(n)O(n)O(n) [n, n, n is the number of elements]  
 Drawbacks: Inefficient with large lists, Not suitable for sorted data
+
+## Binary Search
