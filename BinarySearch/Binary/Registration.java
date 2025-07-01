@@ -1,4 +1,4 @@
-package Files;
+package Binary;
 
 public class Registration {
     public String license;

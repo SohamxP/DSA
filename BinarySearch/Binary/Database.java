@@ -1,4 +1,4 @@
-package Files;
+package Binary;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
