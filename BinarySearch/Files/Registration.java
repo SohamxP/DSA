@@ -1,3 +1,5 @@
+package Files;
+
 public class Registration {
     public String license;
     public String owner;
