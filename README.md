@@ -92,9 +92,14 @@ while (left <= right)
 ## Insertion Sort
 ## Selection Sort 
 Finds a value in the dataset smaller than the first value and swaps. Next, it finds the smaller value than the second value and swaps.
+## Merge Sort
+## Quick Sort
 ## Time Complexity 
 Bubble Sort: Best Case - O(n)
              Worst Case and Average Case - O(n²)
 Insertion Sort: Best Case - O(n)
                 Worst Case and Average Case - O(n²)
 Selection Sort: All Cases - O(n²)
+Merge Sort: 
+Quick Sort: Avg - O(nlogn)
+            Worst - O(n²)
